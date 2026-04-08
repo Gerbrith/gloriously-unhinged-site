@@ -1,0 +1,225 @@
+---
+// src/pages/savanna.astro
+// Savanna Rioux — Author Bio
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Savanna Rioux — Gloriously Unhinged</title>
+  <meta name="description" content="Savanna Rioux. Writer. Transylvanian export. Mythology wiz, queen of darkness." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <nav>
+    <a href="/" class="nav-home">gloriously unhinged</a>
+  </nav>
+
+  <main>
+    <header class="bio-header">
+      <span class="card-icon">♠</span>
+      <h1>Savanna Rioux</h1>
+      <p class="bio-subtitle">Mythology wiz, queen of dankness.</p>
+    </header>
+
+    <section class="bio-body">
+      <p>
+        Born in Transylvania and now living in the UK — proving she's not
+        the only one to make that journey — Savanna Rioux writes dark fantasy
+        driven by a love of complex characters and stories that don't let
+        go easily.
+      </p>
+
+      <p>
+        She speaks three languages, travels whenever she can, and has a habit
+        of falling down historical rabbit holes for the sake of "research."
+      </p>
+
+      <p>
+        When she's not writing or reading, she's usually painting walls,
+        building furniture like it's a personal challenge, or adding to her
+        growing collection of tattoos. She lives with her cat, who supervises
+        everything and remains thoroughly unimpressed.
+      </p>
+    </section>
+
+    <section class="bio-details">
+      <div class="detail">
+        <h3>Origin</h3>
+        <p>Transylvania. Yes, that one.</p>
+      </div>
+      <div class="detail">
+        <h3>Languages</h3>
+        <p>Three, plus whatever the rabbit holes teach her</p>
+      </div>
+      <div class="detail">
+        <h3>Side quests</h3>
+        <p>Painting walls, building furniture, collecting tattoos</p>
+      </div>
+      <div class="detail">
+        <h3>Supervisor</h3>
+        <p>One cat. Thoroughly unimpressed.</p>
+      </div>
+    </section>
+
+    <div class="back-link">
+      <a href="/">← Back to home</a>
+    </div>
+  </main>
+</body>
+</html>
+
+<style is:global>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg: #0d0d14;
+    --surface: #151521;
+    --surface-border: #2a2a3d;
+    --text: #c8c8d4;
+    --text-muted: #7a7a92;
+    --accent: #8b7ec8;
+    --accent-bright: #a594f9;
+    --white: #e8e8f0;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    background-image: url('/purplesmoke.jpeg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+    body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(13, 13, 20, 0.85);
+    z-index: -1;
+  }
+
+  nav {
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .nav-home {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-home:hover { color: var(--accent-bright); }
+
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+  }
+
+  .bio-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .bio-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .bio-subtitle {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .bio-body {
+    margin-bottom: 3rem;
+  }
+
+  .bio-body p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  .bio-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .bio-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--surface-border);
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .detail {
+    padding: 1.5rem;
+    background: var(--surface);
+  }
+
+  .detail h3 {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+  .detail p {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .back-link { text-align: center; }
+
+  .back-link a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link a:hover { color: var(--accent-bright); }
+
+  @media (max-width: 480px) {
+    .bio-details {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
