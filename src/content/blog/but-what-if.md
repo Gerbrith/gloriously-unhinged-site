@@ -2,7 +2,7 @@
 ---
 title: "Hmmm... but what if?"
 description: "On beat sheets, improvisation, and knowing when to let the plan burn"
-date: "Apr 2026"
+date: "2026-04-08"
 ---
 
 

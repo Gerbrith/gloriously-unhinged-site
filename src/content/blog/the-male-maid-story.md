@@ -2,7 +2,7 @@
 ---
 title: "The male maid story that started it all"
 description: "How reading something disappointing became the best creative decision we ever made"
-date: "Apr 2026"
+date: "2026-04-07"
 ---
 
 It started, as most great creative endeavours do, with a story so disappointing we couldn't stop talking about it.

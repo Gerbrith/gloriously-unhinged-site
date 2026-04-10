@@ -2,7 +2,7 @@
 ---
 title: "Knowing when to let go"
 description: "Creative hangover, and the importance of rest"
-date: "Apr 2026"
+date: "2026-04-09"
 ---
 
 As you may have heard, we wrote a book in 9 days.

@@ -2,7 +2,7 @@
 ---
 title: "65k words in 9 days"
 description: "On sprint-writing, shared madness, and why sleep is optional"
-date: "Apr 2026"
+date: "2026-04-06"
 ---
 
 We are officially insane. It all started when we saw a story written about a male maid. 
