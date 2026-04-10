@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gloriouslyunhinged.com/sitemap-index.xml
