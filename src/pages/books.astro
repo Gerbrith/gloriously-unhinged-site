@@ -172,9 +172,12 @@ import Head from '../components/Head.astro';
               <span>Almost there</span>
             </div>
             <div class="status-track">
-              <div class="status-fill" style="width: 92%"></div>
+              <div class="status-fill" style="width: 98%"></div>              
             </div>
           </div>
+          <button class="bonus-btn ml-onclick-form" onclick="ml('show', 'gKhLTk', true)">
+  Get the bonus Afterlife chapters
+</button>
         </div>
       </div>
     </section>
@@ -272,6 +275,13 @@ import Head from '../components/Head.astro';
       if (e.key === 'Escape') lightbox.classList.remove('active');
     });
   </script>
+  <script is:inline>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2260020');
+</script>
 </body>
 </html>
 
@@ -620,4 +630,22 @@ import Head from '../components/Head.astro';
       flex-direction: column;
     }
   }
+  .bonus-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent-bright);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bonus-btn:hover {
+  background: var(--accent);
+  color: var(--white);
+}
 </style>
