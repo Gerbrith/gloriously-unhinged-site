@@ -61,11 +61,47 @@ import Head from '../components/Head.astro';
         <p>One cat. Thoroughly unimpressed.</p>
       </div>
     </section>
-
+<section class="subscribe">
+  <h2>Stay in Savanna's orbit</h2>
+  <form class="subscribe-form" id="subscribe-form">
+    <input type="email" name="fields[email]" placeholder="your@email.com" aria-label="Email address" required />
+    <input type="hidden" name="ml-submit" value="1" />
+    <input type="hidden" name="anticsrf" value="true" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="subscribe-note" id="subscribe-note">No spam. Just darkness, on schedule.</p>
+</section>
     <div class="back-link">
       <a href="/">← Back to home</a>
     </div>
   </main>
+<script is:inline>
+  document.getElementById('subscribe-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const note = document.getElementById('subscribe-note');
+    try {
+      const res = await fetch('https://assets.mailerlite.com/jsonp/2260020/forms/186029700170123056/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)),
+      });
+      const data = await res.json();
+      if (data.success) {
+        note.textContent = "You're in! Watch your inbox.";
+        note.style.color = '#a594f9';
+        form.reset();
+      } else {
+        note.textContent = 'Something went wrong. Try again?';
+        note.style.color = '#ff6b6b';
+      }
+    } catch {
+      note.textContent = 'Something went wrong. Try again?';
+      note.style.color = '#ff6b6b';
+    }
+  });
+</script>
+
 </body>
 </html>
 
@@ -219,4 +255,69 @@ import Head from '../components/Head.astro';
       grid-template-columns: 1fr;
     }
   }
+.subscribe {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.subscribe h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  max-width: 300px;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+  color: var(--text-muted);
+}
+
+.subscribe-form input[type="email"]:focus {
+  border-color: var(--accent);
+}
+
+.subscribe-form button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.subscribe-form button:hover {
+  background: var(--accent-bright);
+}
+
+.subscribe-note {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-style: italic;
+}
 </style>
