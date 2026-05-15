@@ -27,7 +27,7 @@ import Head from '../components/Head.astro';
 
       <div class="book-card">
         <div class="book-cover">
-          <img src="/bbcovermockuppulp1.png" alt="Blurred Borders cover" />
+          <img src="/bbcoverpulp5.png" alt="Blurred Borders cover" />
         </div>
         <div class="book-info">
           <h3 class="book-title">Blurred Borders</h3>
@@ -80,11 +80,11 @@ import Head from '../components/Head.astro';
           <div class="book-stats">
             <div class="stat">
               <span class="stat-label">Words</span>
-              <span class="stat-value">65,000</span>
+              <span class="stat-value">87,000</span>
             </div>
             <div class="stat">
               <span class="stat-label">Pages</span>
-              <span class="stat-value">229</span>
+              <span class="stat-value">320</span>
             </div>
             <div class="stat">
               <span class="stat-label">Release</span>
@@ -93,11 +93,11 @@ import Head from '../components/Head.astro';
           </div>
           <div class="status-bar-container">
             <div class="status-label">
-              <span>Revising</span>
-              <span>Due May 1st</span>
+              <span>Beta phase 1</span>
+              <span>Revision round 2 begins June 1st</span>
             </div>
             <div class="status-track">
-              <div class="status-fill" style="width: 75%"></div>
+              <div class="status-fill" style="width: 80%"></div>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ import Head from '../components/Head.astro';
     </section>
 
     <!-- ===== SAVANNA ===== -->
-    <section class="book-section">
+    <section class="book-section" id="ibtl">
       <h2 class="section-label">Savanna Rioux — Solo</h2>
 
       <div class="book-card">
@@ -168,16 +168,15 @@ import Head from '../components/Head.astro';
           </div>
           <div class="status-bar-container">
             <div class="status-label">
-              <span>Formatting</span>
-              <span>Almost there</span>
+              <span>Out now!</span>
+              <span>Launched May 15th</span>
             </div>
             <div class="status-track">
-              <div class="status-fill" style="width: 98%"></div>              
+              <div class="status-fill" style="width: 100%"></div>              
             </div>
           </div>
-          <button class="bonus-btn ml-onclick-form" onclick="ml('show', 'gKhLTk', true)">
-  Get the bonus Afterlife chapters
-</button>
+        <a href="https://www.amazon.com/dp/B0DGKM4NQW" target="_blank" class="buy-btn">Kindle eBook</a>
+<a href="https://shop.ingramspark.com/b/084?params=uWLxQAR5yAAWVBll4kEpxuQlci3aRs6YM2DO4c2VIlQ" target="_blank" class="buy-btn">Paperback</a>
         </div>
       </div>
     </section>
@@ -240,7 +239,7 @@ import Head from '../components/Head.astro';
               <span>In progress</span>
             </div>
             <div class="status-track">
-              <div class="status-fill" style="width: 45%"></div>
+              <div class="status-fill" style="width: 55%"></div>
             </div>
           </div>
         </div>
@@ -647,5 +646,24 @@ import Head from '../components/Head.astro';
 .bonus-btn:hover {
   background: var(--accent);
   color: var(--white);
+}
+.buy-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.buy-btn:hover {
+  background: var(--accent-bright);
 }
 </style>

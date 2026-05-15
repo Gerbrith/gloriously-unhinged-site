@@ -16,6 +16,9 @@ const posts = (await getCollection('blog'))
 </head>
 
 <body>
+  <a href="/books#ibtl" class="announcement-bar">
+  🎉 <em>In Between the Lies</em> by Savanna Rioux is out now — grab your copy →
+</a>
   <!-- ===== HERO ===== -->
   <section class="hero">
     <p class="tagline">Dark Romance · Dark Comedy · Darker Impulses</p>
@@ -494,4 +497,24 @@ const posts = (await getCollection('blog'))
     text-decoration: none;
     color: inherit;
   }
+  .announcement-bar {
+  display: block;
+  text-align: center;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+
+.announcement-bar:hover {
+  opacity: 0.9;
+}
+
+.announcement-bar em {
+  font-family: 'Playfair Display', Georgia, serif;
+}
 </style>
