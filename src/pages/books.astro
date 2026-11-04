@@ -27,11 +27,15 @@ import Head from '../components/Head.astro';
 
       <div class="book-card">
         <div class="book-cover">
-          <img src="/bbcoverpulp5.png" alt="Blurred Borders cover" />
+          <img src="/finalcoverfrontBB.png" alt="Blurred Borders cover" />
+         <a href="/judes-playlist" class="playlist-btn">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    Jude's Playlist
+  </a>
         </div>
         <div class="book-info">
           <h3 class="book-title">Blurred Borders</h3>
-          <p class="book-authors">Savanna Rioux & Nina Dahl</p>
+          <p class="book-authors">Nina Dahl & Savanna Rioux</p>
           <div class="book-tags">
             <span class="tag">M/M Dark Romance</span>
             <span class="tag">Romantic Suspense</span>
@@ -39,21 +43,17 @@ import Head from '../components/Head.astro';
           </div>
           <div class="book-blurb">
             <p>
-              Rafi is a reclusive billionaire who dismantles trafficking rings with
-              enthusiasm and questionable methods, then rehabilitates men from bigoted
-              backgrounds by making them dress as maids and do traditionally female
-              chores. He has reasons. It works. But his personal life is becoming
-              dangerous, his past is closing in, and his newest maid is very obviously
-              a spy who isn't even subtle about it.
+              Rafi is a vigilante billionaire who dismantles trafficking rings with 
+              enthusiasm and questionable methods, then rehabilitates men from bigoted 
+              backgrounds by making them dress as maids and do traditionally female chores.
             </p>
             <p>
-              Jude thought the army was his forever home. Medically discharged and
-              uneasy at the Agency, his first encounter with true happiness is
-              infiltrating what he expected to be a trafficking den — only to find an
-              enjoyable breeze about his nethers, work that fulfils him, and a
-              surprisingly charming kingpin who staunchly refuses to touch his very
-              willing pretend-employee.
+              Jude is the happiest he's ever been. The snag?
+              He's supposed to be here to catch the bad guy, not have a blast dancing 
+              through hallways and lusting after his target.
             </p>
+            <p>Oh well, no need to dwell on negativity, right?
+              Not when the target is biting his lip ring, eyes locked on your thighs...</p>
             <p>
               Somewhere between revenge plots, emotional breakdowns, and aggressively
               domestic chaos involving matching jewelry, cats, donuts, and unsolicited
@@ -80,26 +80,27 @@ import Head from '../components/Head.astro';
           <div class="book-stats">
             <div class="stat">
               <span class="stat-label">Words</span>
-              <span class="stat-value">87,000</span>
+              <span class="stat-value">104,000</span>
             </div>
             <div class="stat">
               <span class="stat-label">Pages</span>
-              <span class="stat-value">320</span>
+              <span class="stat-value">403</span>
             </div>
             <div class="stat">
               <span class="stat-label">Release</span>
-              <span class="stat-value">Fall 2026</span>
+              <span class="stat-value">Dec 5th 2026</span>
             </div>
           </div>
           <div class="status-bar-container">
             <div class="status-label">
-              <span>Beta phase 1</span>
-              <span>Revision round 2 begins June 1st</span>
+              <span>In Proofreading</span>
+              <span>ARC copies go out on Nov.5th</span>
             </div>
             <div class="status-track">
-              <div class="status-fill" style="width: 80%"></div>
+              <div class="status-fill" style="width: 99%"></div>
             </div>
           </div>
+           <a href="https://mybook.to/BlurredBorders" target="_blank" class="buy-btn">Kindle eBook preorder</a>
         </div>
       </div>
     </section>
@@ -665,5 +666,25 @@ import Head from '../components/Head.astro';
 
 .buy-btn:hover {
   background: var(--accent-bright);
+}
+.playlist-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent-bright);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.playlist-btn:hover {
+  background: var(--accent);
+  color: var(--white);
 }
 </style>

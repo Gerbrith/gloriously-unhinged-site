@@ -1,0 +1,273 @@
+---
+/**
+ * BaseLayout — the shared wrapper for every page.
+ *
+ * Gives every page: the <head> tags (via Head.astro), fonts, colours,
+ * the purple smoke background, the top nav and the "Back to home" link.
+ *
+ * Usage:
+ *   <BaseLayout title="…" description="…">
+ *     …your page content…
+ *   </BaseLayout>
+ *
+ * Optional props:
+ *   image     — social preview image, e.g. "/bbcoverpulp5.png" (defaults to og-default.png)
+ *   width     — "normal" (800px, like Books) or "narrow" (680px, like the bios)
+ *   backLink  — false hides "← Back to home"
+ *   bare      — true = no nav, no <main> wrapper, no back link (for the homepage)
+ *
+ * Extra things for <head> (e.g. a script one page needs):
+ *   <script slot="head" …></script>
+ */
+import Head from '../components/Head.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  width?: 'normal' | 'narrow';
+  backLink?: boolean;
+  bare?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  width = 'normal',
+  backLink = true,
+  bare = false,
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <Head title={title} description={description} image={image} />
+    <slot name="head" />
+  </head>
+
+  <body>
+    {bare ? (
+      <slot />
+    ) : (
+      <>
+        <nav class="site-nav">
+          <a href="/" class="nav-home">gloriously unhinged</a>
+        </nav>
+
+        <main class:list={['site-main', width === 'narrow' && 'site-main--narrow']}>
+          <slot />
+
+          {backLink && (
+            <div class="back-link">
+              <a href="/">← Back to home</a>
+            </div>
+          )}
+        </main>
+      </>
+    )}
+  </body>
+</html>
+
+<style is:global>
+  /* ===== RESET ===== */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ===== COLOURS ===== */
+  :root {
+    --bg: #0d0d14;
+    --surface: #151521;
+    --surface-border: #2a2a3d;
+    --text: #c8c8d4;
+    --text-muted: #7a7a92;
+    --accent: #8b7ec8;
+    --accent-bright: #a594f9;
+    --white: #e8e8f0;
+  }
+
+  /* ===== BASE ===== */
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    background-image: url('/purplesmoke.jpeg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(13, 13, 20, 0.85);
+    z-index: -1;
+  }
+
+  a {
+    color: var(--accent-bright);
+  }
+
+  /* ===== NAV ===== */
+  .site-nav {
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .nav-home {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-home:hover {
+    color: var(--accent-bright);
+  }
+
+  /* ===== MAIN ===== */
+  .site-main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+  }
+
+  .site-main--narrow {
+    max-width: 680px;
+  }
+
+  /* ===== PAGE HEADER ===== */
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-header.centered {
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* ===== SECTIONS ===== */
+  .page-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+
+  /* A dark rounded box, like the book cards */
+  .panel {
+    padding: 2rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    background: var(--surface);
+  }
+
+  .panel p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .panel p + p {
+    margin-top: 0.75rem;
+  }
+
+  /* Plain text paragraphs, like the bio pages */
+  .prose p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  .prose em {
+    color: var(--accent-bright);
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn,
+  .buy-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--accent);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn:hover,
+  .buy-btn:hover {
+    background: var(--accent-bright);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent-bright);
+  }
+
+  .btn-outline:hover {
+    background: var(--accent);
+    color: var(--white);
+  }
+
+  /* ===== BACK LINK ===== */
+  .back-link {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .back-link a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link a:hover {
+    color: var(--accent-bright);
+  }
+</style>

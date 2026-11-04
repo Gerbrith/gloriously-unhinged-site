@@ -17,7 +17,7 @@ What began as a joke turned into a brainstorming session, which turned into a sh
 
 ## The premise
 
-A government agent goes undercover to infiltrate a trafficking operation and winds up as a domestic worker. In a maid uniform. Inside the household of the man he's investigating. The man running a covert rescue operation out of a Welsh manor who separates women and children from their abusers — while making the men wear French maid outfits for six months as part of what can only be described as the world's most unhinged rehabilitation programme.
+A government agent goes undercover to infiltrate a trafficking operation and winds up as a domestic worker. In a maid uniform. Inside the household of the man he's investigating. The man running a covert rescue operation out of an English manor who separates women and children from their abusers — while making the men wear French maid outfits for six months as part of what can only be described as the world's most unhinged rehabilitation programme.
 
 We know how it sounds. That's the point.
 
@@ -40,4 +40,4 @@ It probably shouldn't work. It works beautifully.
 
 *Blurred Borders* — an M/M dark romance with romantic suspense elements, a slow-burn that earns every moment of its HEA, and a premise so ridiculous it wraps all the way back around to being devastatingly sincere.
 
-We looked at a terrible book and said "we can do better." Turns out we could. And now we can't stop.
+We looked at a disappointing story and said "can we do better?" Turns out we could. And now we can't stop.

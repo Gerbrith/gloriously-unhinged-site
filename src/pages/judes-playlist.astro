@@ -1,0 +1,124 @@
+---
+/**
+ * Jude's Playlist — gloriouslyunhinged.com/judes-playlist
+ *
+ * ⚠️ This URL is printed in the book as a QR code.
+ *    NEVER rename or delete this file after the book is printed.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Paste the playlist ID here: the part after "list=" in the playlist URL.
+const playlistId = 'PLfq7qtYoG7Sk';
+
+const embedUrl = `https://www.youtube-nocookie.com/embed/videoseries?list=${playlistId}`;
+const youtubeMusicUrl = `https://music.youtube.com/playlist?list=${playlistId}`;
+---
+
+<BaseLayout
+  title="Jude's Playlist — Blurred Borders — Gloriously Unhinged"
+  description="Jude's curated list of whatever the fuck he felt like at the time. The official Blurred Borders playlist."
+  image="/bbcoverpulp5.png"
+>
+  <header class="page-header centered">
+    <p class="kicker">Blurred Borders</p>
+    <h1>Jude's Playlist</h1>
+    <p class="page-subtitle">
+      Curated with all the care and precision of a man in a maid uniform
+      who should have been doing surveillance.
+    </p>
+  </header>
+
+  <section class="page-section prose">
+    <p>
+      You scanned a QR code in a dark romance novel. Look at you.
+      Thriving.
+    </p>
+    <p>
+      These are the songs Jude picked. There was no system. There was no theme.
+      There was a federal agency that should have known better, a household he
+      was supposed to be investigating, an apron, and a man choosing
+      <em>whatever the fuck he felt like at the time.</em> We respect him far
+      too much to impose order on it.
+    </p>
+    <p>
+      Press play. Do the dishes. Question your choices. It worked for him.
+    </p>
+  </section>
+
+  <section class="page-section">
+    <div class="player">
+      <iframe
+        src={embedUrl}
+        title="Jude's Playlist"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <p class="player-note">
+      YouTube may sneak ads in between songs. We don't control those.
+      Rafi has been informed and is looking into it.
+    </p>
+
+    <div class="player-links">
+      <a href={youtubeMusicUrl} target="_blank" rel="noopener" class="btn btn-outline">
+        Open in YouTube Music
+      </a>
+      <a href="/books" class="btn btn-outline">
+        About Blurred Borders
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .kicker {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-subtitle {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+    /* Square 250x250 music player, centered */
+  .player {
+    box-sizing: content-box;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .player iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .player-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.9rem;
+  }
+
+  .player-links {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+</style>
